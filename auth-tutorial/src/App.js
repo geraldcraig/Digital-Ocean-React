@@ -8,7 +8,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import useToken from './components/useToken';
 
 function App() {
-    const { token, setToken } = useToken();
+    const { token, setToken, removeToken } = useToken();
 
     return (
         <div className="wrapper">
@@ -20,7 +20,7 @@ function App() {
                         path="/dashboard"
                         element={
                             <ProtectedRoute token={token}>
-                                <Dashboard />
+                                <Dashboard removeToken={removeToken} />
                             </ProtectedRoute>
                         }
                     />
