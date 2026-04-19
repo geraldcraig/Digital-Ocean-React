@@ -6,18 +6,15 @@ import Login from "./components/Login";
 import Preferences from './components/Preferences';
 import ProtectedRoute from './components/ProtectedRoute';
 import {AuthProvider} from "./contexts/AuthContext";
-import useToken from "./components/useToken";
 
 function App() {
-    const { setToken } = useToken();
-
     return (
         <AuthProvider>
             <div className="wrapper">
                 <h1>Application</h1>
                 <BrowserRouter>
                     <Routes>
-                        <Route path="/login" element={<Login setToken={setToken}/>} />
+                        <Route path="/login" element={<Login />} />
                         <Route
                             path="/dashboard"
                             element={
